@@ -1,0 +1,32 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <link rel="stylesheet"  href="/static/css.css">
+    <title>WELCOME</title>
+</head>
+<body>
+    <p class="q">通知</p>
+    <form  method="get" action="search">
+  {% csrf_token %}
+  <input type="search" placeholder="" required>
+  <button type="submit">搜索</button>
+    </form>
+    <div class="resf">
+    {% for line in tz %}
+    <tr>
+        <td>
+            {{line.0}},</td>
+        <td>&nbsp
+            时间：{{line.1}}</td>
+        <td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+            标题：{{line.2}}</td>
+        <td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+            网址：{{line.3}}<br>
+        </td>
+    </tr>
+    {% endfor %}
+    </div>
+</body>
+</html>

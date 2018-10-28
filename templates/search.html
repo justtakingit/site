@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% for a in message_list %}
+  <div>{{a}}</div>
+{% empty %}
+  <div>
+    无搜索结果
+  </div>
+{% endfor %}
+
+
+
+</body>
+</html>
